@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 md:flex-row flex-col h-screen transaction-height duration-60 ease-out">
+    <div className="flex bg-gray-50 md:flex-row flex-col h-screen transaction-height duration-50 ease-out">
       <div className="hidden md:flex h-screen flex-initial">
         <SideBar user={user && user} />
       </div>
@@ -48,14 +48,18 @@ export default function Home() {
             <img src={logo} alt="logo" className="w-28" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt="logo" className="w-28" />
+            <img
+              src={user?.image}
+              alt="logo"
+              className="w-12 h-auto rounded-full"
+            />
           </Link>
         </div>
         {toggleSideBar && (
-          <div className="fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
+          <div className="fixed w-2/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in ">
             <div className="absolute w-full flex justify-end items-center p-2">
               <AiFillCloseCircle
-                fontSize={30}
+                fontSize={22}
                 className="cursor-pointer"
                 onClick={() => setToggleSidebar(false)}
               />
