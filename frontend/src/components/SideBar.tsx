@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+import { BsDashLg } from "react-icons/bs";
 import logo from "../assets/logo.png";
 
 const categories = [
@@ -13,7 +14,7 @@ const categories = [
 const isNotActiveStyle =
   "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
 const isActiveStyle =
-  "flex items-center px-5 gap-3 font-extrabold border-r-2 border-black  transition-all duration-200 ease-in-out capitalize";
+  "flex items-center px-5 gap-3 font-bold border-r-2 border-black text-rose-400	 transition-all duration-200 ease-in-out capitalize";
 
 const Sidebar = ({ closeToggle, user }: any) => {
   const handleCloseSidebar = () => {
@@ -30,6 +31,7 @@ const Sidebar = ({ closeToggle, user }: any) => {
         >
           <img src={logo} alt="logo" className="w-50" />
         </Link>
+        <BsDashLg className="w-100" />
         <div className="flex flex-col gap-5">
           <NavLink
             to="/"
@@ -65,7 +67,7 @@ const Sidebar = ({ closeToggle, user }: any) => {
       {user && (
         <Link
           to={`user-profile/${user._id}`}
-          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3"
+          className="flex my-5 mb-3 gap-2 p-2 items-center bg-sky-200 rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
           <img
