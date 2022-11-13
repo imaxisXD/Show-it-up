@@ -8,7 +8,7 @@ import { ABC, SideBar, UserProfile } from "../components";
 import Pins from "./Pins";
 
 import { client } from "../scripts/clientConnectionSanity";
-import userFetcher from "../scripts/sanityQueries";
+import { userFetcher } from "../scripts/sanityQueries";
 import userInfoGetter from "../scripts/userInfoGetter";
 
 interface User {
