@@ -37,6 +37,6 @@ export default function Feed(props: any) {
     );
   }
   return (
-    <>{pinInformation && <MasonryLayout pinInformation={pinInformation} />} </>
+    <>{pinInformation && <MasonryLayout pinInformation={pinInformation} />}</>
   );
 }
