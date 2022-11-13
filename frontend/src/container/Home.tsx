@@ -4,11 +4,11 @@ import { HiMenu } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import logo from "../assets/logo.png";
 
-import { ABC, SideBar, UserProfile } from "../components";
+import { SideBar, UserProfile } from "../components";
 import Pins from "./Pins";
 
 import { client } from "../scripts/clientConnectionSanity";
-import userFetcher from "../scripts/sanityQueries";
+import { userFetcher } from "../scripts/sanityQueries";
 import userInfoGetter from "../scripts/userInfoGetter";
 
 interface User {
@@ -72,7 +72,6 @@ export default function Home() {
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
           <Route path="/*" element={<Pins user={user && user} />} />
-          <Route path="/abc" element={<ABC />} />
         </Routes>
       </div>
     </div>

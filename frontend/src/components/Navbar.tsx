@@ -3,10 +3,8 @@ import { IoMdSearch, IoMdAdd } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 export function Navbar(props: any) {
   const { user, searchKeyword, setSearchKeyword } = props;
-  console.log(user);
-
-  if (!user) return null;
   const navigate = useNavigate();
+  if (!user) return null;
   return (
     <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7 ">
       <div className="flex justify-start items-center w-full px-2 rounded-md bg-white border-solid border-2 shadow-md focus-within:shadow-sm">
