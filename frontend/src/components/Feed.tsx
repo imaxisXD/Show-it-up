@@ -25,15 +25,17 @@ export default function Feed(props: any) {
   }, [category]);
   if (isLoading) {
     return (
-      <Oval
-        ariaLabel="loading-indicator"
-        height={70}
-        width={70}
-        strokeWidth={5}
-        strokeWidthSecondary={1}
-        color="#FB7185"
-        secondaryColor="#a1dbfa"
-      />
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <Oval
+          ariaLabel="loading-indicator"
+          height={70}
+          width={70}
+          strokeWidth={5}
+          strokeWidthSecondary={1}
+          color="#FB7185"
+          secondaryColor="#a1dbfa"
+        />
+      </div>
     );
   }
   return (
