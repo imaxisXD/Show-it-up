@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
@@ -10,8 +10,10 @@ import userInfoGetter from "../scripts/userInfoGetter";
 
 const IndividualImageTile = ({ pin }: any) => {
   const { whoPosted, image, _id, destinationURL } = pin;
+
   const [postHovered, setPostHovered] = useState(false);
   const [savingPost, setSavingPost] = useState(false);
+
   const navigate = useNavigate();
   const user = userInfoGetter();
 
@@ -22,7 +24,7 @@ const IndividualImageTile = ({ pin }: any) => {
   };
 
   let alreadySaved = pin?.save?.filter(
-    (item: any) => item?.postedBy?._id === user?.googleId
+    (item: any) => item?.whoPosted?._id === user?.sub
   );
 
   alreadySaved = alreadySaved?.length > 0 ? alreadySaved : [];
@@ -36,11 +38,11 @@ const IndividualImageTile = ({ pin }: any) => {
         .setIfMissing({ save: [] })
         .insert("after", "save[-1]", [
           {
-            _key: "x",
-            userId: user?.googleId,
-            postedBy: {
-              _type: "postedBy",
-              _ref: user?.googleId,
+            _key: uuidv4(),
+            userId: user?.sub,
+            whoPosted: {
+              _type: "whoPosted",
+              _ref: user?.sub,
             },
           },
         ])
@@ -88,9 +90,10 @@ const IndividualImageTile = ({ pin }: any) => {
               {alreadySaved?.length !== 0 ? (
                 <button
                   type="button"
-                  className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
+                  className="bg-white opacity-70 hover:opacity-100 text-black font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none disabled:opacity-25"
+                  disabled
                 >
-                  {pin?.save?.length} Saved
+                  AlreadySaved
                 </button>
               ) : (
                 <button
