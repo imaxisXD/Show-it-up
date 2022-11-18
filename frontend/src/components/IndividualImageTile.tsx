@@ -90,10 +90,10 @@ const IndividualImageTile = ({ pin }: any) => {
               {alreadySaved?.length !== 0 ? (
                 <button
                   type="button"
-                  className="bg-white opacity-70 hover:opacity-100 text-black font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none disabled:opacity-25"
+                  className="bg-rose-300  hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none disabled:opacity-75"
                   disabled
                 >
-                  AlreadySaved
+                  Already Saved
                 </button>
               ) : (
                 <button

@@ -3,14 +3,8 @@ import { RiHomeFill } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsDashLg } from "react-icons/bs";
 import logo from "../assets/logo.png";
+import { categories } from "../utils/data.js";
 
-const categories = [
-  { name: "animals", image: "xma" },
-  { name: "test2" },
-  { name: "wallpaper" },
-  { name: "test3" },
-  { name: "other" },
-];
 const isNotActiveStyle =
   "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
 const isActiveStyle =
