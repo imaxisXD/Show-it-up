@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdSearch, IoMdAdd } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
+
 export function Navbar(props: any) {
   const { user, searchKeyword, setSearchKeyword } = props;
   const navigate = useNavigate();
