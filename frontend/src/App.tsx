@@ -8,10 +8,10 @@ import userInfoGetter from "./scripts/userInfoGetter";
 function App() {
   const navigate = useNavigate();
 
+  const user = userInfoGetter;
   useEffect(() => {
-    const user = userInfoGetter;
     if (!user) navigate("/login");
-  }, []);
+  }, [user]);
 
   return (
     <Routes>

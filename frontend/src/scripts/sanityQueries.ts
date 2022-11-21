@@ -50,3 +50,53 @@ export const allfeedQuery = `*[_type == "sharedImage"] | order(_createdAt desc) 
         },
       },
     } `;
+
+export const userCreatedPinsQuery = (user: any) => {
+  const query = `*[ _type == 'sharedImage' && userId == '${user}'] | order(_createdAt desc){
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    destinationURL,
+    whoPosted->{
+      _id,
+      Username,
+      image
+    },
+    save[]{
+      whoPosted->{
+        _id,
+        Username,
+        image
+      },
+    },
+  }`;
+  return query;
+};
+
+export const userSavedPinsQuery = (user: any) => {
+  const query = `*[_type == 'sharedImage' && '${user}' in save[].userId ] | order(_createdAt desc) {
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    destinationURL,
+    whoPosted->{
+      _id,
+      Username,
+      image
+    },
+    save[]{
+      whoPosted->{
+        _id,
+        Username,
+        image
+      },
+    },
+  }`;
+  return query;
+};
