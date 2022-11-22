@@ -100,3 +100,66 @@ export const userSavedPinsQuery = (user: any) => {
   }`;
   return query;
 };
+
+export const pinDetailQuery = (pinId: any) => {
+  const query = `*[_type == "sharedImage" && _id == '${pinId}']{
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    title, 
+    about,
+    category,
+    destinationURL,
+    whoPosted->{
+      _id,
+      Username,
+      image
+    },
+   save[]{
+      whoPosted->{
+        _id,
+        Username,
+        image
+      },
+    },
+    comments[]{
+      comment,
+      _key,
+      whoPosted->{
+        _id,
+        Username,
+        image
+      },
+    }
+  }`;
+  return query;
+};
+
+export const pinDetailMorePinQuery = (pin: any) => {
+  const query = `*[_type == "sharedImage" && category == '${pin.category}' && _id != '${pin._id}' ]{
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    destination,
+    postedBy->{
+      _id,
+      Username,
+      image
+    },
+    save[]{
+      _key,
+      postedBy->{
+        _id,
+        Username,
+        image
+      },
+    },
+  }`;
+  return query;
+};
