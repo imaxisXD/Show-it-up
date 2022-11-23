@@ -5,7 +5,7 @@ import { allfeedQuery, searchTermQuery } from "../scripts/sanityQueries";
 import { Oval } from "react-loader-spinner";
 
 const Search = ({ searchKeyword }: any) => {
-  const [pins, setPins] = useState();
+  const [pins, setPins] = useState<any>();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

@@ -14,7 +14,7 @@ const CreatePin = ({ user }: any) => {
   const [destinationURL, setDestinationURL] = useState("");
   const [fields, setFields] = useState(false);
   const [category, setCategory] = useState("");
-  const [imageAsset, setImageAsset] = useState({});
+  const [imageAsset, setImageAsset] = useState<any>();
   const [wrongImageType, setWrongImageType] = useState(false);
 
   const navigate = useNavigate();

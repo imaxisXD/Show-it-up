@@ -42,9 +42,11 @@ module.exports = {
         primary: "#FAFAFA",
         secColor: "#efefef",
         navColor: "#BEBEBE",
+        secondaryColorYellow: "#F9CC0B",
       },
       backgroundColor: {
         mainColor: "#FBF8F9",
+        themeColor: "#222c3b",
         secondaryColor: "#F0F0F0",
         blackOverlay: "rgba(0, 0 ,0 ,0.7)",
       },

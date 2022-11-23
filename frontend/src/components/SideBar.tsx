@@ -8,7 +8,7 @@ import { categories } from "../utils/data.js";
 const isNotActiveStyle =
   "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
 const isActiveStyle =
-  "flex items-center px-5 gap-3 font-bold border-r-2 border-black text-rose-400	 transition-all duration-200 ease-in-out capitalize";
+  "flex items-center px-5 gap-3 font-bold border-r-2 border-black text-secondaryColorYellow	 transition-all duration-200 ease-in-out capitalize";
 
 const Sidebar = ({ closeToggle, user }: any) => {
   const handleCloseSidebar = () => {
@@ -16,7 +16,7 @@ const Sidebar = ({ closeToggle, user }: any) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar">
+    <div className="flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar bg-mainColor">
       <div className="flex flex-col">
         <Link
           to="/"
@@ -38,9 +38,9 @@ const Sidebar = ({ closeToggle, user }: any) => {
             Home
           </NavLink>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl">
-            Discover cateogries
+            ✨ Discover cateogries ✨
           </h3>
-          {categories.slice(0, categories.length - 1).map((category) => (
+          {categories.slice(0, categories.length - 1).map((category: any) => (
             <NavLink
               to={`/category/${category.name}`}
               className={({ isActive }) =>

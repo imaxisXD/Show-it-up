@@ -15,13 +15,13 @@ import { googleLogout } from "@react-oauth/google";
 const activeBtnStyles =
   "bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none";
 const notActiveBtnStyles =
-  "bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none";
+  "bg-transparent hover:text-white hover:bg-red-300 mr-4 ml-4 text-white font-bold p-2 rounded-full w-20 outline-none border border-red-400 hover:border-transparent";
 
 const UserProfile = () => {
-  const [user, setUser] = useState();
-  const [pinInformation, setPinInformation] = useState();
-  const [text, setText] = useState("Created");
-  const [activeBtn, setActiveBtn] = useState("created");
+  const [user, setUser] = useState<any>();
+  const [pinInformation, setPinInformation] = useState<any>();
+  const [text, setText] = useState<any>("Created");
+  const [activeBtn, setActiveBtn] = useState<any>("created");
   const navigate = useNavigate();
   const { userId } = useParams();
 
@@ -87,7 +87,7 @@ const UserProfile = () => {
               alt="user-pic"
             />
           </div>
-          <h1 className="font-bold text-3xl text-center mt-3 capitalize">
+          <h1 className="font-bold text-3xl text-center mt-3 text-primary capitalize">
             {user?.Username}
           </h1>
           <div className="absolute top-0 z-1 right-0 p-2">
@@ -106,7 +106,7 @@ const UserProfile = () => {
           <button
             type="button"
             onClick={(e) => {
-              setText(e.target.textContent);
+              setText((e.target as HTMLElement).textContent);
               setActiveBtn("created");
             }}
             className={`${
@@ -118,7 +118,7 @@ const UserProfile = () => {
           <button
             type="button"
             onClick={(e) => {
-              setText(e.target.textContent);
+              setText((e.target as HTMLElement).textContent);
               setActiveBtn("saved");
             }}
             className={`${
@@ -134,7 +134,7 @@ const UserProfile = () => {
         </div>
 
         {pinInformation?.length === 0 && (
-          <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
+          <div className="flex justify-center font-bold items-center w-full text-1xl mt-2 text-primary">
             No Pins Found!
           </div>
         )}
