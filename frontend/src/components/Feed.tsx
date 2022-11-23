@@ -8,10 +8,10 @@ import { MasonryLayout } from "../components/index";
 export default function Feed(props: any) {
   const [isLoading, setIsLoading] = useState(true);
   const [pinInformation, setPinInformation] = useState(null);
-  let { category } = useParams();
+  let { categoryId } = useParams();
 
   useEffect(() => {
-    if (category) {
+    if (categoryId) {
       client.fetch(searchTermQuery(category)).then((data) => {
         setPinInformation(data);
         setIsLoading(false);
@@ -22,7 +22,7 @@ export default function Feed(props: any) {
         setIsLoading(false);
       });
     }
-  }, [category]);
+  }, [categoryId]);
   if (isLoading) {
     return (
       <div className="flex flex-col justify-center items-center w-full h-full">
@@ -38,6 +38,7 @@ export default function Feed(props: any) {
       </div>
     );
   }
+  if (!pinInformation) return <>NO IMAGE</>;
   return (
     <>{pinInformation && <MasonryLayout pinInformation={pinInformation} />}</>
   );

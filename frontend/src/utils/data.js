@@ -1,5 +1,10 @@
 export const categories = [
   {
+    name: "anime",
+    image:
+      "https://i.pinimg.com/564x/d5/2e/95/d52e9504fed436b1ebfd704ed81314a2.jpg",
+  },
+  {
     name: "fitness",
     image:
       "https://i.pinimg.com/236x/25/14/29/251429345940a47490cc3d47dfe0a8eb.jpg",

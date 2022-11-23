@@ -11,14 +11,14 @@ export const searchTermQuery = (searchTerm: string) => {
         },
             _id,
             destinationURL,
-            postedBy->{
+            whoPosted->{
               _id,
               Username,
               image
             },
             save[]{
               _key,
-              postedBy->{
+              whoPosted->{
                 _id,
                 Username,
                 image

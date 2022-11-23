@@ -93,7 +93,7 @@ const PinDetail = ({ user }: any) => {
             <div className="flex items-center justify-between">
               <div className="flex gap-2 items-center">
                 <a
-                  href={`${pinDetail.image.asset.url}?dl=`}
+                  href={`${pinDetail?.image.asset.url}?dl=`}
                   download
                   className="bg-secondaryColor p-2 text-xl rounded-full flex items-center justify-center text-dark opacity-75 hover:opacity-100"
                 >

@@ -1,10 +1,10 @@
-import React from "react";
 import { IoMdSearch, IoMdAdd } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 
 export function Navbar(props: any) {
   const { user, searchKeyword, setSearchKeyword } = props;
   const navigate = useNavigate();
+
   if (!user) return null;
   return (
     <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7 ">
@@ -22,7 +22,7 @@ export function Navbar(props: any) {
       <div className="flex gap-3 ">
         <Link to={`user-profile/${user?._id}`} className="hidden md:block">
           <img
-            src={user.image}
+            src={user?.image}
             alt="user-pic"
             className="w-14 h-12 rounded-lg "
           />
