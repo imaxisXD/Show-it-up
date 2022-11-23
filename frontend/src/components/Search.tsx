@@ -22,7 +22,6 @@ const Search = ({ searchKeyword }: any) => {
         setLoading(false);
       });
     }
-    console.log(searchKeyword);
   }, [searchKeyword]);
 
   return (

@@ -12,7 +12,7 @@ export default function Feed(props: any) {
 
   useEffect(() => {
     if (categoryId) {
-      client.fetch(searchTermQuery(category)).then((data) => {
+      client.fetch(searchTermQuery(categoryId)).then((data) => {
         setPinInformation(data);
         setIsLoading(false);
       });
