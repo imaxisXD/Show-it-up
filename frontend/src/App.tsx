@@ -8,7 +8,8 @@ import userInfoGetter from "./scripts/userInfoGetter";
 function App() {
   const navigate = useNavigate();
 
-  const user = userInfoGetter;
+  const user = userInfoGetter();
+
   useEffect(() => {
     if (!user) navigate("/login");
   }, [user]);

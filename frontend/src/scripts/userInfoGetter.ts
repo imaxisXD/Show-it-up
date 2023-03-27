@@ -1,6 +1,6 @@
 function userInfoGetter() {
-  return localStorage.getItem("userDetails") !== undefined
+  return localStorage.getItem("userDetails") !== null
     ? JSON.parse(localStorage.getItem("userDetails") || "{}")
-    : localStorage.clear();
+    : null;
 }
 export default userInfoGetter;
