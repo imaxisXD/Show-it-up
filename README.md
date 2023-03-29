@@ -8,6 +8,9 @@
 
 • Contains full CRUD functionality.
 
+<img width="1440" alt="Screenshot 2023-03-28 at 11 57 52 AM" src="https://user-images.githubusercontent.com/56172425/228467163-53c83789-51b5-42eb-8955-1660069d2152.png">
+
+
 Live - https://showitup.netlify.app
 
 GitHub - https://github.com/imaxisXD/Show-it-up
